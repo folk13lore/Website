@@ -1,0 +1,28 @@
+query PersonDetails($personId: Int!) {
+  personDetails(personId: $personId) {
+    sourceUrl
+    details {
+      id
+      name
+      source
+      description
+      birthDate
+      deathDate
+      place
+      website
+      gender
+      displayImages
+    }
+    contents {
+      name
+      items {
+        character
+        media {
+          id
+          title
+          image
+        }
+      }
+    }
+  }
+}

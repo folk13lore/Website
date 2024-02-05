@@ -1,0 +1,14 @@
+query PeopleList($input: PeopleListInput!) {
+  peopleList(input: $input) {
+    details {
+      total
+      nextPage
+    }
+    items {
+      id
+      name
+      image
+      mediaCount
+    }
+  }
+}

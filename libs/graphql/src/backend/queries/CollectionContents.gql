@@ -1,0 +1,29 @@
+query CollectionContents($input: CollectionContentsInput!) {
+  collectionContents(input: $input) {
+    user {
+      name
+    }
+    reviews {
+      ...ReviewItemPart
+    }
+    results {
+      details {
+        total
+        nextPage
+      }
+      items {
+        metadataLot
+        entityLot
+        details {
+          ...MediaSearchItemPart
+        }
+      }
+    }
+    details {
+      name
+      description
+      visibility
+      createdOn
+    }
+  }
+}

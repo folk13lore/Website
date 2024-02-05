@@ -1,0 +1,10 @@
+[package]
+name = "rs-utils"
+version = "0.0.0"
+edition = "2021"
+
+[dependencies]
+chrono = { workspace = true }
+
+[package.metadata.dist]
+dist = false

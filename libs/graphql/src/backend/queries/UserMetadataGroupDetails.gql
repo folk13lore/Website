@@ -1,0 +1,10 @@
+query UserMetadataGroupDetails($metadataGroupId: Int!) {
+  userMetadataGroupDetails(metadataGroupId: $metadataGroupId) {
+    reviews {
+      ...ReviewItemPart
+    }
+    collections {
+      ...CollectionPart
+    }
+  }
+}

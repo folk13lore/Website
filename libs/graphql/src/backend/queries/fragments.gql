@@ -1,0 +1,152 @@
+fragment SeenPodcastExtraInformationPart on SeenPodcastExtraInformation {
+  episode
+}
+
+fragment SeenShowExtraInformationPart on SeenShowExtraInformation {
+  episode
+  season
+}
+
+fragment SeenAnimeExtraInformationPart on SeenAnimeExtraInformation {
+  episode
+}
+
+fragment SeenMangaExtraInformationPart on SeenMangaExtraInformation {
+  chapter
+}
+
+fragment CalendarEventPart on GraphqlCalendarEvent {
+  calendarEventId
+  metadataId
+  metadataTitle
+  metadataLot
+  metadataImage
+  date
+  showExtraInformation {
+    ...SeenShowExtraInformationPart
+  }
+  podcastExtraInformation {
+    ...SeenPodcastExtraInformationPart
+  }
+}
+
+fragment SeenPart on Seen {
+  id
+  progress
+  state
+  startedOn
+  finishedOn
+  lastUpdatedOn
+  numTimesUpdated
+  showExtraInformation {
+    ...SeenShowExtraInformationPart
+  }
+  podcastExtraInformation {
+    ...SeenPodcastExtraInformationPart
+  }
+  animeExtraInformation {
+    ...SeenAnimeExtraInformationPart
+  }
+  mangaExtraInformation {
+    ...SeenMangaExtraInformationPart
+  }
+}
+
+fragment MediaSearchItemPart on MediaSearchItem {
+  identifier
+  title
+  image
+  publishYear
+}
+
+fragment PartialMetadataPart on PartialMetadata {
+  id
+  lot
+  source
+  identifier
+  title
+  image
+}
+
+fragment WorkoutOrExerciseTotalsPart on WorkoutOrExerciseTotals {
+  personalBestsAchieved
+  weight
+  reps
+  distance
+  duration
+  restTime
+}
+
+fragment EntityAssetsPart on EntityAssets {
+  images
+  videos
+}
+
+fragment WorkoutSetStatisticPart on WorkoutSetStatistic {
+  duration
+  distance
+  reps
+  weight
+  oneRm
+  pace
+  volume
+}
+
+fragment WorkoutSummaryPart on WorkoutSummary {
+  total {
+    ...WorkoutOrExerciseTotalsPart
+  }
+  exercises {
+    numSets
+    id
+    lot
+    bestSet {
+      statistic {
+        ...WorkoutSetStatisticPart
+      }
+      lot
+      personalBests
+    }
+  }
+}
+
+fragment CollectionPart on Collection {
+  id
+  name
+}
+
+fragment ReviewItemPart on ReviewItem {
+  id
+  rating
+  textOriginal
+  textRendered
+  spoiler
+  visibility
+  postedOn
+  postedBy {
+    id
+    name
+  }
+  comments {
+    id
+    text
+    createdOn
+    user {
+      id
+      name
+    }
+    likedBy
+  }
+  showExtraInformation {
+    ...SeenShowExtraInformationPart
+  }
+  podcastExtraInformation {
+    ...SeenPodcastExtraInformationPart
+  }
+  animeExtraInformation {
+    ...SeenAnimeExtraInformationPart
+  }
+  mangaExtraInformation {
+    ...SeenMangaExtraInformationPart
+  }
+}

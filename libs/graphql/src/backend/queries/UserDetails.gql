@@ -1,0 +1,11 @@
+query UserDetails {
+  userDetails {
+    __typename
+    ... on User {
+      id
+      email
+      name
+      lot
+    }
+  }
+}

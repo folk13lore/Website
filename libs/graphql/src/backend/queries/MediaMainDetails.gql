@@ -1,0 +1,32 @@
+query MediaMainDetails($metadataId: Int!) {
+  mediaDetails(metadataId: $metadataId) {
+    title
+    lot
+    source
+    isNsfw
+    sourceUrl
+    identifier
+    description
+    publishYear
+    publishDate
+    providerRating
+    productionStatus
+    originalLanguage
+    genres {
+      id
+      name
+    }
+    group {
+      id
+      name
+      part
+    }
+    assets {
+      images
+      videos {
+        videoId
+        source
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+query UserExerciseDetails($input: UserExerciseDetailsInput!) {
+  userExerciseDetails(input: $input) {
+    collections {
+      ...CollectionPart
+    }
+    history {
+      workoutId
+      workoutName
+      workoutTime
+      index
+      sets {
+        lot
+        statistic {
+          ...WorkoutSetStatisticPart
+        }
+      }
+    }
+    details {
+      exerciseId
+      lastUpdatedOn
+      exerciseNumTimesInteracted
+      exerciseExtraInformation {
+        lifetimeStats {
+          weight
+          reps
+          distance
+          duration
+          personalBestsAchieved
+        }
+        personalBests {
+          lot
+          sets {
+            workoutId
+            workoutDoneOn
+            exerciseIdx
+            setIdx
+            data {
+              statistic {
+                ...WorkoutSetStatisticPart
+              }
+              lot
+            }
+          }
+        }
+      }
+    }
+  }
+}

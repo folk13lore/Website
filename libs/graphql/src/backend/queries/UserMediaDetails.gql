@@ -1,0 +1,33 @@
+query UserMediaDetails($metadataId: Int!) {
+  userMediaDetails(metadataId: $metadataId) {
+    collections {
+      ...CollectionPart
+    }
+    inProgress {
+      ...SeenPart
+    }
+    history {
+      ...SeenPart
+    }
+    averageRating
+    unitsConsumed
+    reviews {
+      ...ReviewItemPart
+    }
+    reminder {
+      remindOn
+      message
+    }
+    ownership {
+      markedOn
+      ownedOn
+    }
+    isMonitored
+    seenBy
+    nextEntry {
+      season
+      episode
+      chapter
+    }
+  }
+}

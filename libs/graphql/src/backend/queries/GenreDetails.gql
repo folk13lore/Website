@@ -1,0 +1,21 @@
+query GenreDetails($input: GenreDetailsInput!) {
+  genreDetails(input: $input) {
+    details {
+      id
+      name
+      numItems
+    }
+    contents {
+      details {
+        total
+        nextPage
+      }
+      items {
+        details {
+          ...MediaSearchItemPart
+        }
+        metadataLot
+      }
+    }
+  }
+}

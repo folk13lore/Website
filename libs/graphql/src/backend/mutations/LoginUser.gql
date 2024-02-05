@@ -1,0 +1,12 @@
+mutation LoginUser($input: UserInput!) {
+  loginUser(input: $input) {
+    __typename
+    ... on LoginError {
+      error
+    }
+    ... on LoginResponse {
+      apiKey
+      validFor
+    }
+  }
+}

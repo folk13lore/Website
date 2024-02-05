@@ -1,0 +1,13 @@
+query ExerciseParameters {
+  exerciseParameters {
+    filters {
+      type
+      level
+      force
+      mechanic
+      equipment
+      muscle
+    }
+    downloadRequired
+  }
+}

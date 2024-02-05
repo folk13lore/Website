@@ -1,0 +1,56 @@
+query LatestUserSummary {
+  latestUserSummary {
+    calculatedOn
+    fitness {
+      measurementsRecorded
+      exercisesInteractedWith
+      workouts {
+        recorded
+        duration
+        weight
+      }
+     }
+    media {
+      reviewsPosted
+      mediaInteractedWith
+      manga {
+        chapters
+        read
+      }
+      books {
+        pages
+        read
+      }
+      movies {
+        runtime
+        watched
+      }
+      anime {
+        episodes
+        watched
+      }
+      podcasts {
+        runtime
+        played
+        playedEpisodes
+      }
+      visualNovels {
+        played
+        runtime
+      }
+      videoGames {
+        played
+      }
+      shows {
+        runtime
+        watchedEpisodes
+        watchedSeasons
+        watched
+      }
+      audioBooks {
+        runtime
+        played
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+query DetailsQuery($id: Int!) {
+  Media(id: $id) {
+    id
+    title {
+      english
+      userPreferred
+    }
+    isAdult
+    episodes
+    chapters
+    volumes
+    description
+    coverImage {
+      extraLarge
+    }
+    type
+    genres
+    tags {
+      name
+    }
+    startDate {
+      year
+    }
+    bannerImage
+    staff {
+      edges {
+        node {
+          id
+        }
+        role
+      }
+    }
+    studios {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    averageScore
+    recommendations {
+      nodes {
+        mediaRecommendation {
+          id
+          type
+          title {
+            userPreferred
+          }
+          coverImage {
+            extraLarge
+          }
+        }
+      }
+    }
+    trailer {
+      site
+      id
+    }
+  }
+}

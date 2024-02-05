@@ -1,0 +1,20 @@
+query ImportReports {
+  importReports {
+    id
+    source
+    startedOn
+    finishedOn
+    success
+    details {
+      import {
+        total
+      }
+      failedItems {
+        lot
+        step
+        identifier
+        error
+      }
+    }
+  }
+}
